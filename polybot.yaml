@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: polybot
-        image: 352708296901.dkr.ecr.us-east-2.amazonaws.com/edenb27-polybot-app:V1.0.1
+        image: 352708296901.dkr.ecr.us-east-2.amazonaws.com/edenb27-polybot-app:V1.0.3
         resources:
           requests:
             memory: "64Mi"
@@ -46,5 +46,5 @@ spec:
     app: polybot
   ports:
     - protocol: TCP
-      port: 80
+      port: 8443
       targetPort: 8443
