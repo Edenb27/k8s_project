@@ -18,7 +18,7 @@ class Bot:
 
         cert_file = '/usr/src/app/edenb11.crt'
         # set the webhook URL
-        with open(cert_file, 'rb') as cert_file:
+        with open(cert_file, 'r') as cert_file:
             self.telegram_bot_client.set_webhook(
                 url=f'{telegram_chat_url}/{token}/',
                 timeout=60,
