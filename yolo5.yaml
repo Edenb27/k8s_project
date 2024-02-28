@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: yolo5
-        image: 352708296901.dkr.ecr.us-east-2.amazonaws.com/edenb27-yolo5-app:V1.0.1
+        image: 352708296901.dkr.ecr.us-east-2.amazonaws.com/edenb27-yolo5-app:V1.0.11
         resources:
           requests:
             memory: "128Mi"
@@ -22,18 +22,18 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "200m"
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 8081
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8081
-          initialDelaySeconds: 10
-          periodSeconds: 15
+#        readinessProbe:
+#          httpGet:
+#            path: /health
+#            port: 8081
+#          initialDelaySeconds: 5
+#          periodSeconds: 10
+#        livenessProbe:
+#          httpGet:
+#            path: /health
+#            port: 8081
+#          initialDelaySeconds: 10
+#          periodSeconds: 15
 
 ---
 
@@ -51,7 +51,7 @@ spec:
 
 ---
 
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: yolo5-hpa
